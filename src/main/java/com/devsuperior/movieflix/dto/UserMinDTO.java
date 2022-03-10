@@ -5,18 +5,21 @@ import com.devsuperior.movieflix.entities.User;
 public class UserMinDTO {
 	private Long id;
 	private String name;
+	private String email;
 
 	public UserMinDTO() {
 	}
 
-	public UserMinDTO(Long id, String name) {
+	public UserMinDTO(Long id, String name, String email) {
 		this.id = id;
 		this.name = name;
+		this.email = email;
 	}
 
 	public UserMinDTO(User entity) {
 		id = entity.getId();
 		name = entity.getName();
+		email = entity.getEmail();
 	}
 
 	public Long getId() {
@@ -33,6 +36,14 @@ public class UserMinDTO {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 }
