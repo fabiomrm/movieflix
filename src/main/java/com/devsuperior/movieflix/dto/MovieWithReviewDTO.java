@@ -1,9 +1,11 @@
 package com.devsuperior.movieflix.dto;
 
-import com.devsuperior.movieflix.entities.Genre;
+import java.util.HashSet;
+import java.util.Set;
+
 import com.devsuperior.movieflix.entities.Movie;
 
-public class MovieDTO {
+public class MovieWithReviewDTO {
 
 	private Long id;
 	private String title;
@@ -14,11 +16,13 @@ public class MovieDTO {
 
 	private GenreMinDTO genre;
 
-	public MovieDTO() {
+	private Set<ReviewDTO> reviews = new HashSet<>();
+
+	public MovieWithReviewDTO() {
 
 	}
 
-	public MovieDTO(Long id, String title, String subTitle, Integer year, String imgUrl, String synopsis) {
+	public MovieWithReviewDTO(Long id, String title, String subTitle, Integer year, String imgUrl, String synopsis) {
 		this.id = id;
 		this.title = title;
 		this.subTitle = subTitle;
@@ -27,19 +31,16 @@ public class MovieDTO {
 		this.synopsis = synopsis;
 	}
 
-	public MovieDTO(Movie entity) {
+	public MovieWithReviewDTO(Movie entity) {
 		id = entity.getId();
 		title = entity.getTitle();
 		subTitle = entity.getSubTitle();
 		year = entity.getYear();
 		imgUrl = entity.getImgUrl();
 		synopsis = entity.getImgUrl();
-	}
-
-	public MovieDTO(Movie entity, Genre genre) {
-		this(entity);
-
-		this.genre = new GenreMinDTO(genre);
+		
+		this.genre = new GenreMinDTO(entity.getGenre());
+		entity.getReviews().forEach(x -> this.reviews.add(new ReviewDTO(x)));
 	}
 
 	public Long getId() {
@@ -96,6 +97,10 @@ public class MovieDTO {
 
 	public void setGenre(GenreMinDTO genre) {
 		this.genre = genre;
+	}
+
+	public Set<ReviewDTO> getReviews() {
+		return reviews;
 	}
 
 }
