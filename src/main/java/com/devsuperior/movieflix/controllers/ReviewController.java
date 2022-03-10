@@ -2,8 +2,11 @@ package com.devsuperior.movieflix.controllers;
 
 import java.net.URI;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,9 +23,9 @@ public class ReviewController {
 	@Autowired
 	private ReviewService service;
 	
-	
+	@PreAuthorize("hasRole('MEMBER')")
 	@PostMapping
-	public ResponseEntity<ReviewDTO> insert(@RequestBody ReviewDTO dto) {
+	public ResponseEntity<ReviewDTO> insert(@Valid @RequestBody ReviewDTO dto) {
 		dto = service.insert(dto);
 		
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(dto.getId()).toUri(); 
