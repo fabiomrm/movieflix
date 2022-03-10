@@ -22,6 +22,7 @@ public class MovieService {
 	
 	@Transactional(readOnly = true)
 	public Page<MovieMinDTO> findAllPaged(Long genreId, Pageable pageable) {
+		genreId = genreId == 0 ? null : genreId;
 		Page<Movie> page = repository.findMovies(genreId, pageable);
 		
 		return page.map(x -> new MovieMinDTO(x));
