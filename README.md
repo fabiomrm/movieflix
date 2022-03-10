@@ -1,7 +1,7 @@
-<h1 align="center">MOVIEFLIX</h1>
+<h1 align="center">Movieflix Parte 2</h1>
 
 <p align="center">
-	Projeto de conclusão da quarta etapa do curso <a href="https://www.linkedin.com/school/devsuperior/">Dev Superior</a>.
+	Projeto de conclusão da quinta etapa do curso <a href="https://www.linkedin.com/school/devsuperior/">Dev Superior</a>.
 </p>
 
 <p align="center">
