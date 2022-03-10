@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/static/v1?label=USER-CITY-EVENT&message=FMRM&color=blueviolet&style=flat-square&logo=ghost"/>
+  <img src="https://github.com/fabiomrm/movieflix/blob/main/uml.png?raw=true"/>
 </p>
 <h4 align="center"> 
 	✔️...Finalizado...✔️
