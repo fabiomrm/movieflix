@@ -21,10 +21,10 @@ public class MovieService {
 	private MovieRepository repository;
 	
 	@Transactional(readOnly = true)
-	public Page<MovieDTO> findAllPaged(Long genreId, Pageable pageable) {
-		Page<Movie> page = repository.findAll(pageable);
+	public Page<MovieMinDTO> findAllPaged(Long genreId, Pageable pageable) {
+		Page<Movie> page = repository.findMovies(genreId, pageable);
 		
-		return page.map(x -> new MovieDTO(x));
+		return page.map(x -> new MovieMinDTO(x));
 		
 		
 	}
