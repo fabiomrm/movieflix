@@ -3,10 +3,6 @@
 <p align="center">
 	Projeto de conclusão da quinta etapa do curso <a href="https://www.linkedin.com/school/devsuperior/">Dev Superior</a>.
 </p>
-
-<p align="center">
-  <img src="https://github.com/fabiomrm/movieflix/blob/main/uml.png?raw=true"/>
-</p>
 <h4 align="center"> 
 	✔️...Finalizado...✔️
 </h4>
